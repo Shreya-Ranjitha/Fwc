@@ -49,7 +49,6 @@ pio project init --board atmega328p
 
 > Replace `atmega328p` with your actual board ID. Use `pio boards` to list available options.
 
----
 
 ### 2. Write Your Firmware in `src/main.cpp`
 
@@ -69,7 +68,6 @@ int main(void) {
 }
 ```
 
----
 
 ### 3. Configure `platformio.ini`
 
@@ -84,7 +82,6 @@ upload_protocol = custom
 upload_command = avrdude -v -p m328p -c usbasp -U flash:w:.pio/build/atmega328p/firmware.hex:i
 ```
 
----
 
 ### 4. Build the Project
 
@@ -94,7 +91,6 @@ Use PlatformIO to compile the firmware:
 pio run
 ```
 
----
 
 ### 5. Upload the Firmware
 
