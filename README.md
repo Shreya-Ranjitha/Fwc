@@ -8,7 +8,7 @@ Welcome to my internship documentation repository. This repository contains a de
 
 - [About](#about)
 - [Setup Details](#setup-details)
-- [Platformio](#platformio)
+- [PlatformIO](#platformio)
 - [Assembly Programming](#assembly-programming)
 - [Embedded C](#embedded-c)
 - [Vaman](vaman)
@@ -32,7 +32,7 @@ You can also refer to the digital design book and supporting material using:
 git clone https://github.com/gadepall/digital-design
 ```
 ---
-##Platformio
+
 ## PlatformIO
 
 PlatformIO is an open-source ecosystem for embedded development. It simplifies compiling and uploading firmware to microcontrollers like the ATmega328P.
