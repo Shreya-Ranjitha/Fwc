@@ -31,5 +31,72 @@ You can also refer to the digital design book and supporting material using:
 ```bash
 git clone https://github.com/gadepall/digital-design
 ```
+---
+##Platformio
+## PlatformIO
 
+PlatformIO is an open-source ecosystem for embedded development. It simplifies compiling and uploading firmware to microcontrollers like the ATmega328P.
+
+---
+
+### 1. Create or Open a PlatformIO Project
+
+Use PlatformIO CLI to create a new project:
+
+```bash
+pio project init --board atmega328p
+```
+
+> Replace `atmega328p` with your actual board ID. Use `pio boards` to list available options.
+
+---
+
+### 2. Write Your Firmware in `src/main.cpp`
+
+Example:
+
+```cpp
+#include <avr/io.h>
+#include <util/delay.h>
+
+int main(void) {
+    DDRB |= (1 << PB0); // Set PB0 as output
+
+    while (1) {
+        PORTB ^= (1 << PB0); // Toggle LED
+        _delay_ms(500);
+    }
+}
+```
+
+---
+
+### 3. Configure `platformio.ini`
+
+Edit the `platformio.ini` file in the root directory of your project:
+
+```ini
+[env:atmega328p]
+platform = atmelavr
+board = atmega328p
+framework = arduino
+upload_protocol = custom
+upload_command = avrdude -v -p m328p -c usbasp -U flash:w:.pio/build/atmega328p/firmware.hex:i
+```
+
+---
+
+### 4. Build the Project
+
+Use PlatformIO to compile the firmware:
+
+```bash
+pio run
+```
+
+---
+
+### 5. Upload the Firmware
+
+Make sure your board is connected to your android device and upload the code using Arduino Droid.
 
