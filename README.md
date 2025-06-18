@@ -30,7 +30,6 @@ You can also refer to the digital design book and supporting material using:
 
 ```bash
 git clone https://github.com/gadepall/digital-design
-
-
+```
 
 
