@@ -95,7 +95,7 @@ pio run
 
 Make sure your board is connected to your android device and upload the code using Arduino Droid.
 
-
+<br>
 ### ⛏ Assignment
 GATE EE-2017,36 - A 10½ digit timer counter possesses a base clock of frequency 100 MHz. When measuring a
 particular input, the reading obtained is the same in: (i) Frequency mode of operation with a gating
