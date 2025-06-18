@@ -162,6 +162,6 @@ void loop() {
 ```
 Output Video:
 
-[Using LED](videos/video_1.mp4)
+[Using LED](videos/video_1.mp4)  
 [Using 7 segment](videos/video_2.mp4)
 
