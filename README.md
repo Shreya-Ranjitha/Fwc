@@ -104,7 +104,7 @@ Make sure your board is connected to your android device and upload the code usi
 ### Assignment
 GATE EE-2017,36 - A 10½ digit timer counter possesses a base clock of frequency 100 MHz. When measuring a
 particular input, the reading obtained is the same in: (i) Frequency mode of operation with a gating
-time of one second and (ii) Period mode of operation (in the  10 ns scale). The frequency of the
+time of one second and (ii) Period mode of operation (in the x 10 ns scale). The frequency of the
 unknown input (reading obtained) in Hz is _________. 
 Ans: 1 0 0 0 0 0 0 0 0
 
@@ -135,7 +135,7 @@ void setup() {
 }
 
 void loop() {
-    // 🔁 Generate a pulse every 200 ms on pin 8
+    // Generate a pulse every 200 ms on pin 8
     if (millis() - lastPulseTime >= 200) {
         digitalWrite(8, HIGH);
         delayMicroseconds(10);  // short HIGH pulse (~10 microseconds)
@@ -143,7 +143,7 @@ void loop() {
         lastPulseTime = millis();
     }
 
-    // ⏱ Every 1 second, display pulse count % 10 on binary pins 4–7
+    // Every 1 second, display pulse count % 10 on binary pins 4–7
     if (millis() - lastUpdate >= 1000) {
         noInterrupts();
         displayValue = pulseCount % 10;
