@@ -1,46 +1,26 @@
-# Internship work Future Wireless Communication at IIT Hyderabad
+# Internship work at Future Wireless Communication at IIT Hyderabad
 
-Welcome to my internship documentation repository. This repository contains a detailed record of my work, assignments, and learning progress during my internship, following the [Digital Design by Gadepalli](https://github.com/gadepall/digital-design/blob/main/main.pdf) textbook.
+Welcome to my internship documentation repository. This repository contains a detailed record of my work, assignments, and learning progress during my internship at IIT Hyderabad (IITH).
 
 ---
 
 ## Table of Contents
 
 - [About](#about)
-- [Internship Tasks](#internship-tasks)
-- [How to Navigate](#how-to-navigate)
-- [Repository Structure](#repository-structure)
-- [Contact](#contact)
-- [License](#license)
+- [Setup Details](#setup-details)
+- [Platformio](#platformio)
+- [Assembly Programming](#assembly-programming)
+- [Embedded C](#embedded-c)
 - [Acknowledgements](#acknowledgements)
 
 ---
 
 ## About
 
-This repository serves as a portfolio of my internship work, documenting my progress, solutions, and notes as I complete assignments and projects related to digital design.
+I applied for the Summer Research Fellowship Programme (SRFP) offered by the Indian Academy of Sciences (IASc) during my third semester. After submitting my application with academic details and a statement of purpose, I was thrilled to receive my selection letter in March. I was assigned to work under the guidance of Dr. GVV Sharma at the Indian Institute of Technology (IIT) Hyderabad. This internship has been a great opportunity to dive deeper into research and practical problem-solving. This repository serves as a portfolio of my internship work, documenting my progress, solutions, and notes as I complete assignments and projects related to digital design.
 
 ---
 
-## Internship Tasks
 
-Each folder in this repository corresponds to a specific task, project, or chapter from the reference book. Inside each folder, you will find:
-
-- Task descriptions and objectives
-- My solutions (code, diagrams, explanations)
-- Notes and reflections on what I learned
-
----
-
-## How to Navigate
-
-1. Browse the repository by folders named after tasks or chapters.
-2. Open any folder to view the related documentation and code.
-3. Code files are provided in relevant languages (C, Verilog, etc.).
-4. Explanations and notes are available in Markdown or PDF format.
-
----
-
-## Repository Structure
 
 
