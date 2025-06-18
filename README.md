@@ -23,14 +23,13 @@ I applied for the Summer Research Fellowship Programme (SRFP) offered by the Ind
 
 ## Setup Details
 
-## Setup Details
+This project follows the same setup used in Prof. G.V.V. Sharma’s [FWC repository](https://github.com/gadepall/fwc-1?tab=readme-ov-file). All required packages, toolchains, and instructions for Termux-based development are listed there.
 
-To set up the environment and tools for this internship work, follow the steps mentioned in the [setup section of this repository](https://github.com/gadepall/fwc-1?tab=readme-ov-file).
-
-Additionally, refer to the book and resources provided at:
+You can also refer to the digital design book and supporting material using:
 
 ```bash
 git clone https://github.com/gadepall/digital-design
+
 
 
 
