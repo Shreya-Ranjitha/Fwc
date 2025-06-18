@@ -98,15 +98,15 @@ Make sure your board is connected to your android device and upload the code usi
 
 
 ### ⛏ Assignment
-GATE EE-2017,36 - A 10½ digit timer counter possesses a base clock of frequency 100 MHz. When measuring a
+▫ GATE EE-2017,36 - A 10½ digit timer counter possesses a base clock of frequency 100 MHz. When measuring a
 particular input, the reading obtained is the same in: (i) Frequency mode of operation with a gating
 time of one second and (ii) Period mode of operation (in the x 10 ns scale). The frequency of the
 unknown input (reading obtained) in Hz is _________. 
 Ans: 1 0 0 0 0 0 0 0 0
 
-Implementation: A digital timer counter based on a frequency of 100Hz is difficult to visualise. A 5Hz-based counter was implemented. Pin 8 is toggled, generating a pulse every 200ms for this purpose. The pulse was visualised using a led initially. Number of pulses were also counted using a 7 segment display later.
+▫ Implementation: A digital timer counter based on a frequency of 100Hz is difficult to visualise. A 5Hz-based counter was implemented. Pin 8 is toggled, generating a pulse every 200ms for this purpose. The pulse was visualised using a led initially. Number of pulses were also counted using a 7 segment display later.
 
-Code:
+▫ Code:
 ```bash
 #include <Arduino.h>
 
@@ -156,7 +156,7 @@ void loop() {
 }
 
 ```
-Output Video:
+▫ Output Video:
 
 [Using LED](videos/video_1.mp4)  
 [Using 7 segment](videos/video_2.mp4)
