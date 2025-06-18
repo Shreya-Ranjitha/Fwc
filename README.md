@@ -112,6 +112,52 @@ Implementation: A digital timer counter based on a frequency of 100Hz is difficu
 
 Code:
 ```bash
+#include <Arduino.h>
+
+volatile uint16_t pulseCount = 0;
+uint8_t displayValue = 0;
+unsigned long lastUpdate = 0;
+unsigned long lastPulseTime = 0;
+
+void countPulse() {
+    pulseCount++;
+}
+
+void setup() {
+    pinMode(2, INPUT);                         // Pulse input
+    attachInterrupt(digitalPinToInterrupt(2), countPulse, RISING);
+
+    for (int i = 4; i <= 7; i++) {
+        pinMode(i, OUTPUT);                    // Binary display output
+    }
+
+    pinMode(8, OUTPUT);                        // Pulse generation output
+}
+
+void loop() {
+    // 🔁 Generate a pulse every 200 ms on pin 8
+    if (millis() - lastPulseTime >= 200) {
+        digitalWrite(8, HIGH);
+        delayMicroseconds(10);  // short HIGH pulse (~10 microseconds)
+        digitalWrite(8, LOW);
+        lastPulseTime = millis();
+    }
+
+    // ⏱ Every 1 second, display pulse count % 10 on binary pins 4–7
+    if (millis() - lastUpdate >= 1000) {
+        noInterrupts();
+        displayValue = pulseCount % 10;
+        pulseCount = 0;
+        interrupts();
+
+        digitalWrite(4, displayValue & 0x01);
+        digitalWrite(5, (displayValue >> 1) & 0x01);
+        digitalWrite(6, (displayValue >> 2) & 0x01);
+        digitalWrite(7, (displayValue >> 3) & 0x01);
+
+        lastUpdate = millis();
+    }
+}
 
 ```
 
