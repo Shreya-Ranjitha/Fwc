@@ -1,4 +1,4 @@
-# Internship work at Future Wireless Communication at IIT Hyderabad
+# ✨Internship work at Future Wireless Communication at IIT Hyderabad✨
 
 Welcome to my internship documentation repository. This repository contains a detailed record of my work, assignments, and learning progress during my internship at IIT Hyderabad (IITH).
 
@@ -16,13 +16,13 @@ Welcome to my internship documentation repository. This repository contains a de
 
 ---
 
-## About
+## 🙋‍♀️About
 
 I applied for the Summer Research Fellowship Programme (SRFP) offered by the Indian Academy of Sciences (IASc) during my third semester. After submitting my application with academic details and a statement of purpose, I was thrilled to receive my selection letter in March. I was assigned to work under the guidance of Dr. GVV Sharma at the Indian Institute of Technology (IIT) Hyderabad. This internship has been a great opportunity to dive deeper into research and practical problem-solving. This repository serves as a portfolio of my internship work, documenting my progress, solutions, and notes as I complete assignments and projects related to digital design.
 
 ---
 
-## Setup Details
+## 📱Setup Details
 
 This project follows the same setup used in Prof. G.V.V. Sharma’s [FWC repository](https://github.com/gadepall/fwc-1?tab=readme-ov-file). All required packages, toolchains, and instructions for Termux-based development are listed there.
 
@@ -33,7 +33,7 @@ git clone https://github.com/gadepall/digital-design
 ```
 ---
 
-## PlatformIO
+## 📃PlatformIO
 
 PlatformIO is an open-source ecosystem for embedded development. It simplifies compiling and uploading firmware to microcontrollers like the ATmega328P.
 
@@ -95,8 +95,8 @@ pio run
 
 Make sure your board is connected to your android device and upload the code using Arduino Droid.
 
----
-### Assignment
+
+### ⛏ Assignment
 GATE EE-2017,36 - A 10½ digit timer counter possesses a base clock of frequency 100 MHz. When measuring a
 particular input, the reading obtained is the same in: (i) Frequency mode of operation with a gating
 time of one second and (ii) Period mode of operation (in the x 10 ns scale). The frequency of the
@@ -160,3 +160,4 @@ Output Video:
 [Using LED](videos/video_1.mp4)  
 [Using 7 segment](videos/video_2.mp4)
 
+---
