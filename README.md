@@ -37,7 +37,6 @@ git clone https://github.com/gadepall/digital-design
 
 PlatformIO is an open-source ecosystem for embedded development. It simplifies compiling and uploading firmware to microcontrollers like the ATmega328P.
 
----
 
 ### 1. Create or Open a PlatformIO Project
 
