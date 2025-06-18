@@ -1,1 +1,46 @@
-# Fwc
+# Internship work Future Wireless Communication at IIT Hyderabad
+
+Welcome to my internship documentation repository. This repository contains a detailed record of my work, assignments, and learning progress during my internship, following the [Digital Design by Gadepalli](https://github.com/gadepall/digital-design/blob/main/main.pdf) textbook.
+
+---
+
+## Table of Contents
+
+- [About](#about)
+- [Internship Tasks](#internship-tasks)
+- [How to Navigate](#how-to-navigate)
+- [Repository Structure](#repository-structure)
+- [Contact](#contact)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+
+---
+
+## About
+
+This repository serves as a portfolio of my internship work, documenting my progress, solutions, and notes as I complete assignments and projects related to digital design.
+
+---
+
+## Internship Tasks
+
+Each folder in this repository corresponds to a specific task, project, or chapter from the reference book. Inside each folder, you will find:
+
+- Task descriptions and objectives
+- My solutions (code, diagrams, explanations)
+- Notes and reflections on what I learned
+
+---
+
+## How to Navigate
+
+1. Browse the repository by folders named after tasks or chapters.
+2. Open any folder to view the related documentation and code.
+3. Code files are provided in relevant languages (C, Verilog, etc.).
+4. Explanations and notes are available in Markdown or PDF format.
+
+---
+
+## Repository Structure
+
+
