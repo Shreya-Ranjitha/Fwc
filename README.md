@@ -162,17 +162,17 @@ void loop() {
 [Using 7 segment](videos/video_2.mp4)
 
 ---
-##🛠 Assembly Programming
+## 🛠 Assembly Programming
 Assembly programming lets you interact directly with the microcontroller hardware, offering maximum control and efficiency. Below are the steps to set up, write, assemble, and upload assembly code for the ATmega328P (the chip on Arduino Uno).
 
-##1. Install Required Tools
+### 1. Install Required Tools
 AVRA: Assembler for AVR microcontrollers.
 avrdude: Tool to upload .hex files to Arduino.
 
-##2. Create Your Assembly Program
+### 2. Create Your Assembly Program
 Write your code in a file, e.g., hello.asm. Example to turn on LED on pin 13 (PB5):
 
-'''
+```
 ; hello.asm - Turns on LED on PB5 (Arduino digital pin 13)
 .include "m328Pdef.inc"
 
@@ -182,20 +182,20 @@ out PORTB, r16       ; Set PB5 high (LED ON)
 
 loop:
   rjmp loop          ; Infinite loop
-'''
+```
 Note: Adjust the .include path as needed.
 
-##3. Assemble the Program
+### 3. Assemble the Program
 Run:
-'''
+```
 avra hello.asm
-'''
+```
 This generates hello.hex (machine code for the microcontroller).
 
-##4. Upload the Hex File to Arduino
+### 4. Upload the Hex File to Arduino
 Connect your Arduino via USB. Upload using Arduino Droid.
 
-##5. Verify Operation
+### 5. Verify Operation
 The LED on pin 13 should turn on.
 Modify your assembly code as needed (e.g., to blink the LED, add delays and toggle logic).
 
