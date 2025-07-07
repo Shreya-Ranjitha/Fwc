@@ -199,5 +199,77 @@ Connect your Arduino via USB. Upload using Arduino Droid.
 The LED on pin 13 should turn on.
 Modify your assembly code as needed (e.g., to blink the LED, add delays and toggle logic).
 
+### ⛏ Assignment
+▫ GATE EE-2017,47 - A finite state machine (FSM) is implemented using the D flip-flops A and B, and logic gates, as shown in the figure below. The four possible states of the FSM are  Q_A Q_B = 00, 01, 10, and 11.
+
+Assume that X_{IN}  is held at a constant logic level throughout the operation of the FSM. When the FSM is initialized to the state  Q_A Q_B = 00  and clocked, after a few clock cycles, it starts cycling through
+
+- (A) all of the four possible states if  X_{IN} = 1 
+- (B) three of the four possible states if  X_{IN} = 0 
+- (C) only two of the four possible states if X_{IN} = 1 
+- (D) only two of the four possible states if X_{IN} = 0 
+
+
+▫ Code:
+```bash
+; Registers:
+; R16 - Q_A
+; R17 - Q_B
+; R18 - X_IN (0 or 1)
+; R19 - D_A (temp)
+; R20 - D_B (temp)
+
+; Assume LED1 is connected to Arduino pin 8 (PORTB0)
+; Assume LED2 is connected to Arduino pin 9 (PORTB1)
+
+    ldi R16, 0      ; Q_A = 0
+    ldi R17, 0      ; Q_B = 0
+    ldi R18, 1      ; X_IN = 1 (set to 0 or 1 as needed)
+
+    sbi DDRB, 0     ; Set PORTB0 (pin 8) as output
+    sbi DDRB, 1     ; Set PORTB1 (pin 9) as output
+
+main_loop:
+    ; D_A = Q_A XOR Q_B
+    mov R19, R16
+    eor R19, R17
+
+    ; D_B = Q_A AND X_IN
+    mov R20, R16
+    and R20, R18
+
+    ; Output Q_A and Q_B to LEDs
+    cpi R16, 0
+    breq led1_off
+    sbi PORTB, 0    ; Turn on LED1
+    rjmp led2_check
+led1_off:
+    cbi PORTB, 0    ; Turn off LED1
+
+led2_check:
+    cpi R17, 0
+    breq led2_off
+    sbi PORTB, 1    ; Turn on LED2
+    rjmp update_state
+led2_off:
+    cbi PORTB, 1    ; Turn off LED2
+
+update_state:
+    ; Update Q_A and Q_B
+    mov R16, R19
+    mov R17, R20
+
+    rjmp main_loop
+
+
+```
+▫ Output Video:
+
+[Demonstration](videos/video_3.mp4)  
+
+---
+## ⚙ Embedded C
+
+
 
 
