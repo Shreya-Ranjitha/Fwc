@@ -11,7 +11,9 @@ Welcome to my internship documentation repository. This repository contains a de
 - [PlatformIO](#platformio)
 - [Assembly Programming](#assembly-programming)
 - [Embedded C](#embedded-c)
-- [Vaman](vaman)
+- [Vaman Esp32](vaman-esp)
+- [Vaman FPGA](vaman-fpga)
+- [Vaman Arm](vaman-arm)
 - [Acknowledgements](#acknowledgements)
 
 ---
@@ -363,3 +365,4 @@ int main(void) {
 [Demonstration](videos/video_4.mp4)  
 
 ---
+## 🔧Vaaman Esp32
