@@ -366,3 +366,138 @@ int main(void) {
 
 ---
 ## 🔧Vaaman Esp32
+
+### 1. Tools Required
+
+**Hardware Requirements:**
+Vaman board
+USB cable for programming
+Raspberry Pi (for ARM programming)
+Android device (for mobile setup)
+WiFi network access
+
+**Software Requirements:**
+F-Droid (Android)
+Termux and Termux-API
+PlatformIO
+Python 3
+Git
+
+### 2. Flashing through UART and RaspberryPi
+i. Ensure the Vaman board does not power any devices.
+ii. Make the following UART connections:
+
+   | VAMAN-ESP | UART PINS |
+   |-----------|-----------|
+   | 5V        | 5V        |
+   | GND       | GND       |
+   | TXD0      | TXD       |
+   | RXD0      | RXD       |
+   | 0         | GND       |
+
+iii. Refer to the Vaman pin diagram for details.
+iv. Connect the UART to the Raspberry Pi using USB.
+v. Connect the pins between Vaman-ESP32 and Vaman-PYGMY as follows:
+
+   | ESP32  | Vaman   |
+   |--------|---------|
+   | GPIO2  | GPIO18  |
+   | GPIO4  | GPIO21  |
+   | GPIO5  | GPIO22  |
+
+vi. Run the following commands to build and upload the code:
+```
+cd vaman/esp32/codes/ide/blink
+pio run
+```
+
+vii. Transfer the ini and bin files to the Raspberry Pi:
+```
+scp platformio.ini pi@192.168.50.252:~/hi/platformio.ini
+scp .pio/build/esp32doit-devkit-v1/firmware.bin pi@192.168.50.252:~/hi/.pio/build/esp32doit-devkit-v1/firmware.bin
+```
+
+viii. On the Raspberry Pi, upload the firmware:
+```
+cd /home/pi/hi
+pio run --target upload
+```
+
+ix. Confirm the onboard LED blinks.
+
+### 3. OTA Setup
+
+i. Flash the following code:
+ ```
+ vaman/esp32/codes/ide/ota/setup
+ ```
+ Enter your WiFi credentials:
+ ```
+ #define STASSID "your_ssid"
+ #define STAPSK "your_password"
+ ```
+
+ii. In `src/main.cpp`, find the IP address of your Vaman-ESP:
+ ```
+ ifconfig
+ nmap -sn 192.168.231.1/24
+ ```
+
+### 4. Flashing through OTA
+i. Disconnect Pi and directly power your Vaaman using USB. Make sure the Vaaman is connected to your wifi.
+ii. Assuming your computer's IP is `192.168.231.245`, flash the code wirelessly:
+ ```
+ pio run
+ pio run --target upload --upload-port 192.168.231.245
+ ```
+
+iii. Flash the OTA blink code:
+ ```
+ vaman/esp32/codes/ide/ota/blink
+ ```
+iv. Flash any code in similar manner
+
+### ⛏ Assignment
+▫ GATE EE-2017,17 - Consider the D-Latch shown in the figure, which is transparent when its clock input CK is high and has zero propagation delay. The clock signal CLK1 has a 50% duty cycle, and CLK2 is a one-fifth period delayed version of CLK1. The duty cycle at the output of the latch in percentage is _______.
+
+▫ Code:
+```bash
+#include <Arduino.h>
+
+volatile uint16_t pulseCount = 0;
+uint8_t displayValue = 0;
+unsigned long lastUpdate = 0;
+
+void countPulse() {
+    pulseCount++;
+}
+
+void setup() {
+    pinMode(2, INPUT);
+    attachInterrupt(digitalPinToInterrupt(2), countPulse, RISING);
+
+    for (int i = 4; i <= 7; i++) {
+        pinMode(i, OUTPUT);
+    }
+}
+
+void loop() {
+    if (millis() - lastUpdate >= 1000) {
+        noInterrupts();
+        displayValue = pulseCount % 10;
+        pulseCount = 0;
+        interrupts();
+
+        digitalWrite(4, displayValue & 0x01);
+        digitalWrite(5, (displayValue >> 1) & 0x01);
+        digitalWrite(6, (displayValue >> 2) & 0x01);
+        digitalWrite(7, (displayValue >> 3) & 0x01);
+
+        lastUpdate = millis();
+    }
+}
+
+```
+▫ Output Video:
+
+[Demonstration](videos/video_4.mp4)
