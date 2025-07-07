@@ -269,7 +269,96 @@ update_state:
 
 ---
 ## ⚙ Embedded C
+This includes Embedded C programs for microcontroller development, focusing on AVR-GCC and the ATmega328P/ATmega32 series. 
 
+### 1. Required Tools
+To build and run these examples, you will need:
+AVR-GCC toolchain (for compiling C code)
+AVRDUDE (for uploading hex files to the microcontroller)
+Supported hardware: ATmega328P, ATmega32, or compatible
 
+### 2. Example Blink Code
+```
+//Turns LED on and off
+#include <avr/io.h>
+#include <util/delay.h>
 
+ 
+int main (void)
+{
+	
+	
+  /* Arduino boards have a LED at PB5 */
+ //set PB5, pin 13 of arduino as output
+  DDRB    |= ((1 << DDB5));
+  while (1) {
+//turn led off    
+    PORTB = ((0 <<  PB5));
+	_delay_ms(500);
+//turn led on
+    PORTB = ((1 <<  PB5));
+    _delay_ms(500);
+  }
 
+  /* . */
+  return 0;
+
+}
+```
+
+### 3. Assemble the Program
+Run:
+```
+make
+```
+This generates hello.hex (machine code for the microcontroller).
+
+### 4. Upload the Hex File to Arduino
+Connect your Arduino via USB. Upload using Arduino Droid.
+
+### 5. Verify Operation
+The LED on pin 13 should turn on.
+Modify your assembly code as needed (e.g., to blink the LED, add delays and toggle logic).
+
+### ⛏ Assignment
+▫ GATE EE-2017,44 - A 4-bit shift register circuit configured for right-shift operation, i.e.
+Din → A, A → B, B → C, C → D, is shown.  
+If the present state of the shift register is ABCD = 1101, the number of clock cycles required to reach the state ABCD = 1111 is __________.
+
+▫ Code:
+```bash
+#include <avr/io.h>
+#include <util/delay.h>
+
+void setup_pins() {
+    DDRB |= (1 << PB0) | (1 << PB1) | (1 << PB2) | (1 << PB3);
+}
+
+void display_state(uint8_t state) {
+    if (state & 0x08) PORTB |= (1 << PB0); else PORTB &= ~(1 << PB0);
+    if (state & 0x04) PORTB |= (1 << PB1); else PORTB &= ~(1 << PB1);
+    if (state & 0x02) PORTB |= (1 << PB2); else PORTB &= ~(1 << PB2);
+    if (state & 0x01) PORTB |= (1 << PB3); else PORTB &= ~(1 << PB3);
+}
+
+int main(void) {
+    setup_pins();
+    uint8_t reg = 0b1101;
+    display_state(reg);
+    _delay_ms(1000);
+    while (reg != 0b1111) {
+        uint8_t A = (reg & 0x08) >> 3; // MSB
+        uint8_t D = (reg & 0x01);     // LSB
+        uint8_t din = A ^ D;          // XOR for feedback
+        reg = (din << 3) | (reg >> 1);
+        display_state(reg);
+        _delay_ms(1000);
+    }
+    while (1);
+}
+
+```
+▫ Output Video:
+
+[Demonstration](videos/video_4.mp4)  
+---
