@@ -500,4 +500,84 @@ void loop() {
 ```
 ▫ Output Video:
 
-[Demonstration](videos/video_4.mp4)
+[Demonstration](videos/video_5.mp4)
+
+---
+## 🔧Vaaman FPGA
+
+### 1. **Follow the Setup Instructions**
+   - Refer to the video instructions at:
+     ```
+     https://github.com/whyakari/TermuxDisableProcess?tab=readme-ov-file
+     ```
+   - This ensures Termux is not killed during installation.
+
+### 2. **Install Required Scripts on Termux-Debian**
+   - Run:
+     ```
+     wget https://raw.githubusercontent.com/gadepall/fwc-1/main/scripts/setup.sh
+     bash setup.sh
+     ```
+
+### 3. **Login to Termux-Debian on Android and Prepare the Environment**
+   - Execute:
+     ```
+     cd vaman/fpga/setup/codes/blink
+     source ~/.vamenv/bin/activate
+     ql_symbiflow --compile --src vaman/fpga/setup/codes/blink -d ql-eos-s3 -P PU64 -v helloworldfpga.v -t helloworldfpga -p pygmy.pcf --dump binary
+     scp blink/helloworldfpga.bin pi@192.168.0.114:
+     ```
+   - Replace the IP address with that of your Raspberry Pi.
+
+### 4. **Put the Vaman Board in Download Mode**
+   - Press the button to the right of the USB port, then immediately press the button to the left. The green LED should flash, indicating download mode.
+
+### 5. **On the Raspberry Pi, Set Up the Python Environment**
+   - Run:
+     ```
+     python3 -m venv ~/.vamenv
+     source ~/.vamenv/bin/activate
+     git clone --recursive https://github.com/QuickLogic-Corp/TinyFPGA-Programmer-Application.git
+     pip3 install tinyfpga
+     deactivate
+     sudo reboot
+     source ~/.vamenv/bin/activate
+     python3 TinyFPGA-Programmer-Application/tinyfpga-programmer-gui.py --port /dev/ttyACM0 --appfpga /home/pi/helloworldfpga.bin --mode fpga --reset
+     ```
+   - Ensure the correct USB port address is used.
+
+### 6. **Verify LED Operation**
+   - The LED will start blinking red if programmed correctly.
+
+### 7. **Edit the Pin Constraints File**
+   - In `codes/blink/pygmy.pcf`, ensure correct pin mappings for your code.
+
+### 8. **Modify Verilog Code**
+   - Update `helloworldfpga.v` as needed.
+
+### 9. **Recompile and Upload**
+    - Repeat the compilation and upload steps above with your updated code and constraints.
+    
+### ⛏ Assignment
+▫ Q.14 In the logic circuit shown in the figure, Y is given by
+
+(A) Y = ABCD  
+(B) Y = (A + B)(C + D)  
+(C) Y = A + B + C + D  
+(D) Y = AB + CD  
+
+
+
+▫ Code:
+```bash
+module sevenseg(input a, input b, input c, input d, output y);
+assign y= ~ (~(a&b) & ~(c&d))
+endmodule
+
+```
+▫ Output Video:
+
+[Demonstration](videos/video_6.mp4) 
+
+---
+
