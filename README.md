@@ -158,10 +158,6 @@ void loop() {
 }
 
 ```
-▫ Output Video:
-
-[Using LED](videos/video_1.mp4)  
-[Using 7 segment](videos/video_2.mp4)
 
 ---
 ## 🛠 Assembly Programming
@@ -265,9 +261,6 @@ update_state:
 
 
 ```
-▫ Output Video:
-
-[Demonstration](videos/video_3.mp4)  
 
 ---
 ## ⚙ Embedded C
@@ -360,9 +353,6 @@ int main(void) {
 }
 
 ```
-▫ Output Video:
-
-[Demonstration](videos/video_4.mp4)  
 
 ---
 ## 🔧Vaaman Esp32
@@ -498,10 +488,6 @@ void loop() {
 }
 
 ```
-▫ Output Video:
-
-[Demonstration](videos/video_5.mp4)
-
 ---
 ## 🔧Vaaman FPGA
 
@@ -575,9 +561,6 @@ assign y= ~ (~(a&b) & ~(c&d))
 endmodule
 
 ```
-▫ Output Video:
-
-[Demonstration](videos/video_6.mp4) 
 
 ---
 ## 🔧Vaaman Arm
@@ -869,9 +852,7 @@ int PyHal_GPIO_Get(uint8_t gpionum)
 }
 
 ```
-▫ Output Video:
 
-[Demonstration](videos/video_8.mp4) 
 ---
 
 
