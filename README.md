@@ -15,8 +15,7 @@ Welcome to my internship documentation repository. This repository contains a de
 - [Vaman FPGA](#vaman-fpga)
 - [Vaman Arm](#vaman-arm)
 - [Swarm Cars](#swarm-cars-swarmbots)
-- [Acknowledgement](#acknowledgment)
-
+- [Acknowledgment](#acknowledgment)
 ---
 
 ## 🙋‍♀️ About
@@ -25,7 +24,7 @@ I applied for the Summer Research Fellowship Programme (SRFP) offered by the Ind
 
 ---
 
-## 📱 Setup Details
+## 📱Setup Details
 
 This project follows the same setup used in Prof. G.V.V. Sharma’s [FWC repository](https://github.com/gadepall/fwc-1?tab=readme-ov-file). All required packages, toolchains, and instructions for Termux-based development are listed there.
 
@@ -36,7 +35,7 @@ git clone https://github.com/gadepall/digital-design
 ```
 ---
 
-## 📃 PlatformIO
+## 📃PlatformIO
 
 PlatformIO is an open-source ecosystem for embedded development. It simplifies compiling and uploading firmware to microcontrollers like the ATmega328P.
 
@@ -837,8 +836,7 @@ int PyHal_GPIO_Set(uint8_t gpionum, uint8_t gpioval)
     return 0;
 }
 //Get GPIO(=gpionum): 0 or 1 returned (or in erros -1)
-//The direction must be set as Input for this GPIO already
-int PyHal_GPIO_Get(uint8_t gpionum)
+//The direction must be set as Input for this GPIO already int PyHal_GPIO_Get(uint8_t gpionum)
 {
     uint32_t tempscratch32;
     uint32_t gpioval_input;
