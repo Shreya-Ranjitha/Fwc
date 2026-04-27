@@ -40,7 +40,7 @@ PlatformIO is an open-source ecosystem for embedded development. It simplifies c
 
 
 ### 1. Create or Open a PlatformIO Project
-![img-1](img-1.png)
+![img-1](images/img-1.png)
 
 Use PlatformIO CLI to create a new project:
 
@@ -358,7 +358,7 @@ int main(void) {
 
 ---
 ## 🔧Vaman Esp32
-![img-3][images/img-3]
+![img-3][images/img-3.png]
 ### 1. Tools Required
 
 **Hardware Requirements:**
@@ -857,7 +857,7 @@ int PyHal_GPIO_Set(uint8_t gpionum, uint8_t gpioval)
 ---
 <a id="swarm-cars"></a>
 ## 🚗 Swarm Cars (SwarmBots)
-![img-2](images/img-2)
+![img-2](images/img-2.png)
 ### Overview  
 As part of the work carried out during the SRFP at IIT Hyderabad, an autonomous **Swarm Car system** was developed to demonstrate real-time multi-agent coordination using minimal embedded hardware.
 
@@ -901,7 +901,7 @@ Each robot estimates its position using **RPM-based dead reckoning**:
 This eliminates the need for GPS, encoders, or LIDAR.
 
 A **web-based interface (hosted on ESP32)** provides:
-![img-4](images/img-4)
+![img-4](images/img-4.png)
 
 - Real-time robot tracking  
 - Path visualization  
