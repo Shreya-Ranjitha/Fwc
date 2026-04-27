@@ -11,21 +11,21 @@ Welcome to my internship documentation repository. This repository contains a de
 - [PlatformIO](#platformio)
 - [Assembly Programming](#assembly-programming)
 - [Embedded C](#embedded-c)
-- [Vaman Esp32](#vaaman-esp32)
-- [Vaman FPGA](#vaaman-fpga)
-- [Vaman Arm](#vaaman-arm)
-- [Swarm Cars](#swarm-cars-(swarmbots))
-- [Acknowledgements](#acknowledgement)
+- [Vaman Esp32](#vaman-esp32)
+- [Vaman FPGA](#vaman-fpga)
+- [Vaman Arm](#vaman-arm)
+- [Swarm Cars](#swarm-cars-swarmbots)
+- [Acknowledgement](#acknowledgment)
 
 ---
 
-## 🙋‍♀️About
+## 🙋‍♀️ About
 
 I applied for the Summer Research Fellowship Programme (SRFP) offered by the Indian Academy of Sciences (IASc) during my third semester. After submitting my application with academic details and a statement of purpose, I was thrilled to receive my selection letter in March. I was assigned to work under the guidance of Dr. GVV Sharma at the Indian Institute of Technology (IIT) Hyderabad. This internship has been a great opportunity to dive deeper into research and practical problem-solving. This repository serves as a portfolio of my internship work, documenting my progress, solutions, and notes as I complete assignments and projects related to digital design.
 
 ---
 
-## 📱Setup Details
+## 📱 Setup Details
 
 This project follows the same setup used in Prof. G.V.V. Sharma’s [FWC repository](https://github.com/gadepall/fwc-1?tab=readme-ov-file). All required packages, toolchains, and instructions for Termux-based development are listed there.
 
@@ -36,7 +36,7 @@ git clone https://github.com/gadepall/digital-design
 ```
 ---
 
-## 📃PlatformIO
+## 📃 PlatformIO
 
 PlatformIO is an open-source ecosystem for embedded development. It simplifies compiling and uploading firmware to microcontrollers like the ATmega328P.
 
@@ -356,7 +356,7 @@ int main(void) {
 ```
 
 ---
-## 🔧Vaaman Esp32
+## 🔧Vaman Esp32
 
 ### 1. Tools Required
 
@@ -490,7 +490,7 @@ void loop() {
 
 ```
 ---
-## 🔧Vaaman FPGA
+## 🔧Vaman FPGA
 
 ### 1. **Follow the Setup Instructions**
    - Refer to the video instructions at:
@@ -564,7 +564,7 @@ endmodule
 ```
 
 ---
-## 🔧Vaaman Arm
+## 🔧Vaman Arm
 These steps provide a concise workflow for programming an ARM Cortex-M4 on the Vaman board to control an LED, including building, transferring, and flashing the code, as well as modifying the source for custom behaviors.
 
 ### 1. **Check Your Path**
