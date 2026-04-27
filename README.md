@@ -5,7 +5,6 @@ Welcome to my internship documentation repository. This repository contains a de
 ---
 
 ## Table of Contents
-
 - [About](#about)
 - [Setup Details](#setup-details)
 - [PlatformIO](#platformio)
@@ -14,16 +13,16 @@ Welcome to my internship documentation repository. This repository contains a de
 - [Vaman Esp32](#vaman-esp32)
 - [Vaman FPGA](#vaman-fpga)
 - [Vaman Arm](#vaman-arm)
-- [Swarm Cars](#swarm-cars-swarmbots)
+- [Swarm Cars](#swarm-cars)
 - [Acknowledgment](#acknowledgment)
 ---
-
+<a id="about"></a>
 ## 🙋‍♀️ About
 
 I applied for the Summer Research Fellowship Programme (SRFP) offered by the Indian Academy of Sciences (IASc) during my third semester. After submitting my application with academic details and a statement of purpose, I was thrilled to receive my selection letter in March. I was assigned to work under the guidance of Dr. GVV Sharma at the Indian Institute of Technology (IIT) Hyderabad. This internship has been a great opportunity to dive deeper into research and practical problem-solving. This repository serves as a portfolio of my internship work, documenting my progress, solutions, and notes as I complete assignments and projects related to digital design.
 
 ---
-
+<a id="setup-details"></a>
 ## 📱Setup Details
 
 This project follows the same setup used in Prof. G.V.V. Sharma’s [FWC repository](https://github.com/gadepall/fwc-1?tab=readme-ov-file). All required packages, toolchains, and instructions for Termux-based development are listed there.
@@ -34,7 +33,7 @@ You can also refer to the digital design book and supporting material using:
 git clone https://github.com/gadepall/digital-design
 ```
 ---
-
+<a id="platformio"></a>
 ## 📃PlatformIO
 
 PlatformIO is an open-source ecosystem for embedded development. It simplifies compiling and uploading firmware to microcontrollers like the ATmega328P.
@@ -160,6 +159,7 @@ void loop() {
 ```
 
 ---
+<a id="assembly-programming"></a>
 ## 🛠 Assembly Programming
 Assembly programming lets you interact directly with the microcontroller hardware, offering maximum control and efficiency. Below are the steps to set up, write, assemble, and upload assembly code for the ATmega328P (the chip on Arduino Uno).
 
@@ -263,6 +263,7 @@ update_state:
 ```
 
 ---
+<a id="embedded-c"></a>
 ## ⚙ Embedded C
 This includes Embedded C programs for microcontroller development, focusing on AVR-GCC and the ATmega328P/ATmega32 series. 
 
@@ -853,6 +854,7 @@ int PyHal_GPIO_Set(uint8_t gpionum, uint8_t gpioval)
 ```
 
 ---
+<a id="swarm-cars"></a>
 ## 🚗 Swarm Cars (SwarmBots)
 
 ### Overview  
@@ -963,6 +965,7 @@ All processing is done locally on the robot.
 This project demonstrates that **complex swarm robotics systems can be built using simple embedded hardware**. By combining ESP32 communication, dead reckoning, and intelligent task allocation, the system achieves scalable and efficient multi-agent coordination without external infrastructure.
 
 ---
+<a id="acknowledgment"></a>
 ## 🙏 Acknowledgment
 
 I would like to express my sincere gratitude to **Dr. G. V. V. Sharma**, Indian Institute of Technology Hyderabad (IIT Hyderabad), for providing me the opportunity to be a part of the Summer Research Fellowship Program (SRFP) and for his constant guidance, support, and encouragement throughout the course of this work.
