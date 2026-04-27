@@ -11,9 +11,10 @@ Welcome to my internship documentation repository. This repository contains a de
 - [PlatformIO](#platformio)
 - [Assembly Programming](#assembly-programming)
 - [Embedded C](#embedded-c)
-- [Vaman Esp32](vaman-esp)
-- [Vaman FPGA](vaman-fpga)
-- [Vaman Arm](vaman-arm)
+- [Vaman Esp32](#vaman-esp)
+- [Vaman FPGA](#vaman-fpga)
+- [Vaman Arm](#vaman-arm)
+- [Swarm Cars](#Swarm-Cars-(SwarmBots))
 - [Acknowledgements](#acknowledgements)
 
 ---
@@ -854,5 +855,125 @@ int PyHal_GPIO_Get(uint8_t gpionum)
 ```
 
 ---
+## 🚗 Swarm Cars (SwarmBots)
 
+### Overview  
+As part of the work carried out during the SRFP at IIT Hyderabad, an autonomous **Swarm Car system** was developed to demonstrate real-time multi-agent coordination using minimal embedded hardware.
+
+Unlike traditional robotic systems that rely on GPS, cloud infrastructure, or expensive sensors, this implementation focuses on **fully offline operation**, using ESP32 microcontrollers and lightweight embedded algorithms.
+
+---
+
+### Hardware Architecture  
+Each swarm car (UGV) consists of:
+
+- ESP32 microcontroller (processing + communication)  
+- L298N motor driver module  
+- DC geared motors (differential drive)  
+- Castor wheel for balance  
+- Battery pack (Li-ion / 9V)  
+- Robot chassis  
+
+This design ensures **low cost, modularity, and scalability**, enabling multiple robots to be deployed easily.
+
+---
+
+### Communication – ESP-NOW  
+The swarm uses **ESP-NOW protocol** for communication:
+
+- Peer-to-peer (no Wi-Fi router required)  
+- Low latency  
+- Device addressing using MAC IDs  
+- Master–slave coordination  
+
+This allows fully offline operation without internet dependency.
+
+---
+
+### Mapping and Localization  
+Each robot estimates its position using **RPM-based dead reckoning**:
+
+- Motor runtime  
+- Wheel circumference  
+- Calculated RPM  
+
+This eliminates the need for GPS, encoders, or LIDAR.
+
+A **web-based interface (hosted on ESP32)** provides:
+
+- Real-time robot tracking  
+- Path visualization  
+- Coordinate-based control  
+
+---
+
+### Task Allocation  
+Tasks are distributed using a **Time-Aware Path Distribution Algorithm**:
+
+- User draws path or selects points  
+- Path is divided into segments  
+- Execution time is estimated  
+- Tasks are distributed among robots  
+
+This ensures **balanced workload and efficient execution**.
+
+---
+
+### Motion Execution  
+Each swarm car:
+
+- Receives assigned (x, y) coordinates  
+- Computes movement using onboard logic  
+- Navigates autonomously  
+- Sends status updates back to master  
+
+All processing is done locally on the robot.
+
+---
+
+### Key Features  
+
+- Fully offline swarm coordination  
+- No GPS / LIDAR / cloud dependency  
+- Real-time web interface  
+- Scalable multi-robot system  
+- Low-cost embedded implementation  
+
+---
+
+### Results  
+
+- Multiple robots operated simultaneously  
+- Position accuracy ≈ ±5 cm (indoor)  
+- Stable real-time tracking  
+- Efficient parallel task execution  
+
+---
+
+### Applications  
+
+- Warehouse automation  
+- Precision agriculture  
+- Disaster response (no network environments)  
+- Industrial inspection  
+- Educational robotics  
+
+---
+
+### Conclusion  
+
+This project demonstrates that **complex swarm robotics systems can be built using simple embedded hardware**. By combining ESP32 communication, dead reckoning, and intelligent task allocation, the system achieves scalable and efficient multi-agent coordination without external infrastructure.
+
+---
+## 🙏 Acknowledgment
+
+I would like to express my sincere gratitude to **Dr. G. V. V. Sharma**, Indian Institute of Technology Hyderabad (IIT Hyderabad), for providing me the opportunity to be a part of the Summer Research Fellowship Program (SRFP) and for his constant guidance, support, and encouragement throughout the course of this work.
+
+His mentorship in the field of embedded systems, communication protocols, and system-level design played a crucial role in shaping my understanding and execution of this project.
+
+I would also like to thank the **Future Wireless Communication (FWC) Lab, IIT Hyderabad**, for providing a collaborative and resourceful environment that enabled hands-on learning and experimentation.
+
+Special thanks to all mentors, peers, and fellow participants of the program for their valuable discussions, feedback, and support during the development of this work.
+
+Finally, I extend my gratitude to my institution and peers for their continuous encouragement and support.
 
