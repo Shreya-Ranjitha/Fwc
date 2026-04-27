@@ -11,11 +11,11 @@ Welcome to my internship documentation repository. This repository contains a de
 - [PlatformIO](#platformio)
 - [Assembly Programming](#assembly-programming)
 - [Embedded C](#embedded-c)
-- [Vaman Esp32](#vaman-esp)
-- [Vaman FPGA](#vaman-fpga)
-- [Vaman Arm](#vaman-arm)
-- [Swarm Cars](#Swarm-Cars-(SwarmBots))
-- [Acknowledgements](#acknowledgements)
+- [Vaman Esp32](#vaaman-esp32)
+- [Vaman FPGA](#vaaman-fpga)
+- [Vaman Arm](#vaaman-arm)
+- [Swarm Cars](#swarm-cars-(swarmbots))
+- [Acknowledgements](#acknowledgement)
 
 ---
 
